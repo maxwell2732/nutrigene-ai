@@ -19,10 +19,9 @@ Conduct a structured literature search and synthesis on the given topic.
 1. **Parse the topic** from `$ARGUMENTS`. If a specific paper is named, use it as the anchor.
 
 2. **Search for related work** using available tools:
-   - Check `master_supporting_docs/supporting_papers/` for uploaded papers
+   - Check `explorations/` and `docs/` for any existing literature notes
    - Use `WebSearch` to find recent publications (if available)
    - Use `WebFetch` to access working paper repositories (if available)
-   - Read any existing `.bib` file for papers already in the project
 
 3. **Organize findings** into these categories:
    - **Theoretical contributions** — models, frameworks, mechanisms

@@ -20,8 +20,9 @@ fi
 # Uses basename matching — add full paths for more precision
 # ============================================================
 PROTECTED_PATTERNS=(
-  "Bibliography_base.bib"
   "settings.json"
+  ".env"
+  "secrets*"
 )
 
 BASENAME=$(basename "$FILE")

@@ -10,13 +10,13 @@ allowed-tools: ["Read", "Grep", "Glob", "Write"]
 
 Generate structured research questions, testable hypotheses, and empirical strategies from a topic, phenomenon, or dataset.
 
-**Input:** `$ARGUMENTS` — a topic (e.g., "minimum wage effects on employment"), a phenomenon (e.g., "why do firms cluster geographically?"), or a dataset description (e.g., "panel of US counties with pollution and health outcomes, 2000-2020").
+**Input:** `$ARGUMENTS` — a topic (e.g., "MTHFR variants and folate metabolism in Chinese populations"), a phenomenon (e.g., "regional variation in micronutrient deficiency"), or a dataset description (e.g., "cohort of 2000 farmers with SNP data and dietary intake records").
 
 ---
 
 ## Steps
 
-1. **Understand the input.** Read `$ARGUMENTS` and any referenced files. Check `master_supporting_docs/` for related papers. Check `.claude/rules/` for domain conventions.
+1. **Understand the input.** Read `$ARGUMENTS` and any referenced files. Check `explorations/` for related notes. Check `.claude/rules/` for domain conventions.
 
 2. **Generate 3-5 research questions** ordered from descriptive to causal:
    - **Descriptive:** What are the patterns? (e.g., "How has X evolved over time?")

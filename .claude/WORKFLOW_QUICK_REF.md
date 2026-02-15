@@ -1,6 +1,7 @@
 # Workflow Quick Reference
 
 **Model:** Contractor (you direct, Claude orchestrates)
+**Project:** NutriGene AI — Personalized Health & Nutrition
 
 ---
 
@@ -11,7 +12,7 @@ Your instruction
     ↓
 [PLAN] (if multi-file or unclear) → Show plan → Your approval
     ↓
-[EXECUTE] Implement, verify, done
+[EXECUTE] Implement, test, verify
     ↓
 [REPORT] Summary + what's ready
     ↓
@@ -23,19 +24,18 @@ Repeat
 ## I Ask You When
 
 - **Design forks:** "Option A (fast) vs. Option B (robust). Which?"
-- **Code ambiguity:** "Spec unclear on X. Assume Y?"
-- **Replication edge case:** "Just missed tolerance. Investigate?"
+- **Data decisions:** "Include this genetic marker? Evidence is mixed."
 - **Scope question:** "Also refactor Y while here, or focus on X?"
+- **Privacy concern:** "This output might contain PII. Confirm approach?"
 
 ---
 
 ## I Just Execute When
 
 - Code fix is obvious (bug, pattern application)
-- Verification (tolerance checks, tests, compilation)
+- Verification (tests, linting, type checking)
 - Documentation (logs, commits)
-- Plotting (per established standards)
-- Deployment (after you approve, I ship automatically)
+- Data pipeline steps (per established standards)
 
 ---
 
@@ -48,26 +48,23 @@ Repeat
 
 ---
 
-## Non-Negotiables (Customize These)
+## Non-Negotiables
 
-<!-- Replace with YOUR project's locked-in preferences -->
-
-- [YOUR PATH CONVENTION] (e.g., `here::here()` for R, relative paths for LaTeX)
-- [YOUR SEED CONVENTION] (e.g., `set.seed()` once at top for stochastic code)
-- [YOUR FIGURE STANDARDS] (e.g., white bg, 300 DPI, custom theme)
-- [YOUR COLOR PALETTE] (e.g., institutional colors)
-- [YOUR TOLERANCE THRESHOLDS] (e.g., 1e-6 for point estimates)
+- **Data privacy:** No PII in version control, ever
+- **Type hints:** All Python functions must have type annotations
+- **Testing:** Every public function has at least one test
+- **Relative paths:** No hardcoded absolute paths
+- **Chinese BMI cutoffs:** Overweight >= 24, Obese >= 28 (not 25/30)
+- **Chinese DRIs:** Use Chinese dietary reference intakes, not Western
 
 ---
 
 ## Preferences
 
-<!-- Fill in as you discover your working style -->
-
-**Visual:** [How you want figures/plots handled]
-**Reporting:** [Concise bullets? Detailed prose? Details on request?]
+**Language:** Python for application code, R for statistical analysis
+**Reporting:** Concise bullets, details on request
 **Session logs:** Always (post-plan, incremental, end-of-session)
-**Replication:** [How strict? Flag near-misses?]
+**Data format:** Parquet for large datasets, CSV for small/shareable
 
 ---
 

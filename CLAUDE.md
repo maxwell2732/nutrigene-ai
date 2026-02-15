@@ -1,12 +1,7 @@
-# CLAUDE.MD -- Academic Project Development with Claude Code
+# CLAUDE.MD -- NutriGene AI Project
 
-<!-- HOW TO USE: Replace [BRACKETED PLACEHOLDERS] with your project info.
-     Customize Beamer environments and CSS classes for your theme.
-     Keep this file under ~150 lines — Claude loads it every session.
-     See the guide at docs/workflow-guide.html for full documentation. -->
-
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Project:** NutriGene AI — Personalized Health & Nutrition AI
+**Institution:** China Agricultural University (中国农业大学)
 **Branch:** main
 
 ---
@@ -14,9 +9,9 @@
 ## Core Principles
 
 - **Plan first** -- enter plan mode before non-trivial tasks; save plans to `quality_reports/plans/`
-- **Verify after** -- compile/render and confirm output at the end of every task
-- **Single source of truth** -- Beamer `.tex` is authoritative; Quarto `.qmd` derives from it
+- **Verify after** -- run tests and confirm output at the end of every task
 - **Quality gates** -- nothing ships below 80/100
+- **Data privacy** -- genetic/health data never committed; PII always anonymized
 - **[LEARN] tags** -- when corrected, save `[LEARN:category] wrong → right` to MEMORY.md
 
 ---
@@ -24,20 +19,24 @@
 ## Folder Structure
 
 ```
-[YOUR-PROJECT]/
-├── CLAUDE.MD                    # This file
+NutriGene-AI/
+├── CLAUDE.md                    # This file
 ├── .claude/                     # Rules, skills, agents, hooks
-├── Bibliography_base.bib        # Centralized bibliography
-├── Figures/                     # Figures and images
-├── Preambles/header.tex         # LaTeX headers
-├── Slides/                      # Beamer .tex files
-├── Quarto/                      # RevealJS .qmd files + theme
-├── docs/                        # GitHub Pages (auto-generated)
-├── scripts/                     # Utility scripts + R code
+├── data/                        # Raw & processed datasets (gitignored)
+├── src/                         # Python source code
+│   ├── api/                     # Web API (FastAPI/Flask)
+│   ├── models/                  # ML/AI models
+│   ├── pipelines/               # Data processing pipelines
+│   └── utils/                   # Shared utilities
+├── scripts/                     # Utility scripts
+│   └── R/                       # R statistical analysis
+├── notebooks/                   # Jupyter/R notebooks for exploration
+├── tests/                       # Test suite
+├── configs/                     # Configuration files
+├── docs/                        # Documentation & deployment
 ├── quality_reports/             # Plans, session logs, merge reports
-├── explorations/                # Research sandbox (see rules)
-├── templates/                   # Session log, quality report templates
-└── master_supporting_docs/      # Papers and existing slides
+├── explorations/                # Research sandbox
+└── templates/                   # Session log, quality report templates
 ```
 
 ---
@@ -45,17 +44,18 @@
 ## Commands
 
 ```bash
-# LaTeX (3-pass, XeLaTeX only)
-cd Slides && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-BIBINPUTS=..:$BIBINPUTS bibtex file
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
+# Python
+python -m pytest tests/
+python src/api/main.py
+ruff check src/
+mypy src/
 
-# Deploy Quarto to GitHub Pages
-./scripts/sync_to_docs.sh LectureN
+# R analysis
+Rscript scripts/R/analysis.R
 
 # Quality score
-python scripts/quality_score.py Quarto/file.qmd
+python scripts/quality_score.py src/module.py
+python scripts/quality_score.py scripts/R/analysis.R
 ```
 
 ---
@@ -74,60 +74,37 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Command | What It Does |
 |---------|-------------|
-| `/compile-latex [file]` | 3-pass XeLaTeX + bibtex |
-| `/deploy [LectureN]` | Render Quarto + sync to docs/ |
-| `/extract-tikz [LectureN]` | TikZ → PDF → SVG |
-| `/proofread [file]` | Grammar/typo/overflow review |
-| `/visual-audit [file]` | Slide layout audit |
-| `/pedagogy-review [file]` | Narrative, notation, pacing review |
-| `/review-r [file]` | R code quality review |
-| `/qa-quarto [LectureN]` | Adversarial Quarto vs Beamer QA |
-| `/slide-excellence [file]` | Combined multi-agent review |
-| `/translate-to-quarto [file]` | Beamer → Quarto translation |
-| `/validate-bib` | Cross-reference citations |
-| `/devils-advocate` | Challenge slide design |
-| `/create-lecture` | Full lecture creation |
 | `/commit [msg]` | Stage, commit, PR, merge |
+| `/review-r [file]` | R code quality review |
+| `/data-analysis [dataset]` | End-to-end R/Python analysis |
 | `/lit-review [topic]` | Literature search + synthesis |
 | `/research-ideation [topic]` | Research questions + strategies |
 | `/interview-me [topic]` | Interactive research interview |
 | `/review-paper [file]` | Manuscript review |
-| `/data-analysis [dataset]` | End-to-end R analysis |
 
 ---
 
-<!-- CUSTOMIZE: Replace the example entries below with your own
-     Beamer environments and Quarto CSS classes. These are examples
-     from the original project — delete them and add yours. -->
+## Key Data Types
 
-## Beamer Custom Environments
+| Data Type | Format | Location | Notes |
+|-----------|--------|----------|-------|
+| Genetic markers | CSV/VCF | `data/raw/` | SNP data, rsIDs |
+| Phenotypic data | CSV | `data/raw/` | BMI, blood pressure, etc. |
+| Dietary intake | CSV | `data/raw/` | Food frequency questionnaires |
+| Processed features | Parquet/CSV | `data/processed/` | Cleaned, anonymized |
+| Model artifacts | pickle/joblib | `src/models/saved/` | Trained models |
 
-| Environment       | Effect        | Use Case       |
-|-------------------|---------------|----------------|
-| `[your-env]`      | [Description] | [When to use]  |
+## Module Status
 
-<!-- Example entries (delete and replace with yours):
-| `keybox` | Gold background box | Key points |
-| `highlightbox` | Gold left-accent box | Highlights |
-| `definitionbox[Title]` | Blue-bordered titled box | Formal definitions |
--->
-
-## Quarto CSS Classes
-
-| Class              | Effect        | Use Case       |
-|--------------------|---------------|----------------|
-| `[.your-class]`    | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `.smaller` | 85% font | Dense content slides |
-| `.positive` | Green bold | Good annotations |
--->
+| Module | Status | Key Functionality |
+|--------|--------|-------------------|
+| `src/api/` | Planned | REST API for nutrition recommendations |
+| `src/models/` | Planned | ML models for personalized nutrition |
+| `src/pipelines/` | Planned | Data ingestion and processing |
+| `scripts/R/` | Planned | Statistical analysis scripts |
 
 ---
 
 ## Current Project State
 
-| Lecture | Beamer | Quarto | Key Content |
-|---------|--------|--------|-------------|
-| 1: [Topic] | `Lecture01_Topic.tex` | `Lecture1_Topic.qmd` | [Brief description] |
-| 2: [Topic] | `Lecture02_Topic.tex` | -- | [Brief description] |
+All modules are in planning phase. Core infrastructure (workflow, quality gates, review agents) is configured and ready.

@@ -1,7 +1,7 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
+  - "src/**/*.py"
+  - "tests/**/*.py"
   - "scripts/**/*.R"
 ---
 
@@ -13,19 +13,40 @@ paths:
 - **90/100 = PR** -- ready for deployment
 - **95/100 = Excellence** -- aspirational
 
-## Quarto Slides (.qmd)
+## Python Modules (.py)
 
 | Severity | Issue | Deduction |
 |----------|-------|-----------|
-| Critical | Compilation failure | -100 |
-| Critical | Equation overflow | -20 |
-| Critical | Broken citation | -15 |
-| Critical | Typo in equation | -10 |
-| Major | Text overflow | -5 |
-| Major | TikZ label overlap | -5 |
-| Major | Notation inconsistency | -3 |
-| Minor | Font size reduction | -1 per slide |
-| Minor | Long lines (>100 chars) | -1 (EXCEPT documented math formulas) |
+| Critical | Import/syntax errors | -100 |
+| Critical | Missing type hints on public functions | -15 |
+| Critical | No tests for public API | -15 |
+| Critical | Hardcoded credentials or PII | -20 |
+| Major | Missing error handling at API boundaries | -5 |
+| Major | No input validation on external data | -5 |
+| Major | Hardcoded absolute paths | -5 |
+| Minor | Missing docstrings | -1 per function |
+| Minor | Long lines (>88 chars, black standard) | -1 |
+
+## API Endpoints
+
+| Severity | Issue | Deduction |
+|----------|-------|-----------|
+| Critical | Endpoint returns 500 on valid input | -100 |
+| Critical | No input validation (Pydantic) | -20 |
+| Critical | PII in response without authorization | -20 |
+| Major | Missing error response schemas | -5 |
+| Major | No logging on errors | -3 |
+| Minor | Missing OpenAPI documentation | -2 |
+
+## Data Pipelines
+
+| Severity | Issue | Deduction |
+|----------|-------|-----------|
+| Critical | Pipeline fails on sample data | -100 |
+| Critical | PII leakage in output | -20 |
+| Major | No data validation/schema check | -10 |
+| Major | Missing logging/audit trail | -5 |
+| Minor | No progress reporting | -1 |
 
 ## R Scripts (.R)
 
@@ -36,14 +57,6 @@ paths:
 | Critical | Hardcoded absolute paths | -20 |
 | Major | Missing set.seed() | -10 |
 | Major | Missing figure generation | -5 |
-
-## Beamer Slides (.tex)
-
-| Severity | Issue | Deduction |
-|----------|-------|-----------|
-| Critical | XeLaTeX compilation failure | -100 |
-| Critical | Undefined citation | -15 |
-| Critical | Overfull hbox > 10pt | -10 |
 
 ## Enforcement
 
@@ -58,10 +71,8 @@ Save to `quality_reports/merges/YYYY-MM-DD_[branch-name].md`.
 
 ## Tolerance Thresholds (Research)
 
-<!-- Customize for your domain -->
-
 | Quantity | Tolerance | Rationale |
 |----------|-----------|-----------|
-| Point estimates | [e.g., 1e-6] | [Numerical precision] |
-| Standard errors | [e.g., 1e-4] | [MC variability] |
-| Coverage rates | [e.g., +/- 0.01] | [MC with B reps] |
+| Nutrient estimates | 0.1 mg | Measurement precision |
+| Risk scores | 0.01 | Model calibration |
+| P-values | Report exact | No rounding to significance |
