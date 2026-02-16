@@ -1,0 +1,101 @@
+# Allele frequencies for risk alleles across populations
+# Sources: gnomAD v4 East Asian, literature meta-analyses
+# All values represent RISK allele frequency
+
+MTHFR_C677T:
+  east_asian: 0.369
+  han_chinese_north: 0.42
+  han_chinese_south: 0.31
+  global: 0.25
+  source: "He et al. 2016 PMID:27108693"
+
+MTHFR_A1298C:
+  east_asian: 0.20
+  han_chinese_north: 0.18
+  han_chinese_south: 0.22
+  global: 0.30
+  source: "He et al. 2016 PMID:27108693"
+
+FTO_rs9939609:
+  east_asian: 0.15
+  han_chinese_north: 0.16
+  han_chinese_south: 0.14
+  global: 0.34
+  source: "gnomAD v4; meta-analyses"
+
+MC4R_rs17782313:
+  east_asian: 0.18
+  han_chinese_north: 0.19
+  han_chinese_south: 0.17
+  global: 0.24
+  source: "gnomAD v4"
+
+MC4R_rs12970134:
+  east_asian: 0.16
+  han_chinese_north: 0.17
+  han_chinese_south: 0.15
+  global: 0.27
+  source: "Yang et al. 2025 PMID:41340654"
+
+APOE_rs429358:
+  east_asian: 0.09
+  han_chinese_north: 0.09
+  han_chinese_south: 0.08
+  global: 0.15
+  source: "gnomAD v4"
+
+APOE_rs7412:
+  east_asian: 0.08
+  han_chinese_north: 0.08
+  han_chinese_south: 0.09
+  global: 0.08
+  source: "gnomAD v4"
+
+FADS1_rs174547:
+  east_asian: 0.38
+  han_chinese_north: 0.40
+  han_chinese_south: 0.36
+  global: 0.35
+  source: "Tanaka et al. 2011 PMID:21414826"
+
+FADS2_rs498793:
+  east_asian: 0.45
+  han_chinese_north: 0.46
+  han_chinese_south: 0.44
+  global: 0.42
+  source: "Tanaka et al. 2011 PMID:21414826"
+
+TCF7L2_rs7903146:
+  east_asian: 0.03
+  han_chinese_north: 0.03
+  han_chinese_south: 0.03
+  global: 0.26
+  source: "gnomAD v4"
+
+BCMO1_rs12934922:
+  east_asian: 0.42
+  han_chinese_north: 0.43
+  han_chinese_south: 0.41
+  global: 0.45
+  source: "gnomAD v4"
+
+ADIPOQ_rs1501299:
+  east_asian: 0.28
+  han_chinese_north: 0.29
+  han_chinese_south: 0.27
+  global: 0.30
+  source: "gnomAD v4"
+
+FGF21_rs838133:
+  east_asian: 0.40
+  han_chinese_north: 0.42
+  han_chinese_south: 0.38
+  global: 0.45
+  source: "gnomAD v4"
+
+VDR_rs2228570:
+  east_asian: 0.35
+  han_chinese_north: 0.34
+  han_chinese_south: 0.36
+  global: 0.38
+  source: "gnomAD v4"

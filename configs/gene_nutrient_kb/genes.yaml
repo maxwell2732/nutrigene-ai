@@ -1,0 +1,80 @@
+# Gene definitions for NutriGene AI genetic risk module
+# 10 genes with nutrition-relevant variants for Chinese populations
+
+MTHFR:
+  full_name: "Methylenetetrahydrofolate reductase"
+  chromosome: "1"
+  function: "Folate metabolism, homocysteine regulation"
+  nutrition_relevance: "Determines folate metabolism efficiency; affects homocysteine levels"
+  chinese_significance: "36.9% T allele frequency; north-south gradient in China"
+
+FTO:
+  full_name: "Fat mass and obesity-associated protein"
+  chromosome: "16"
+  function: "Energy homeostasis, appetite regulation"
+  nutrition_relevance: "Modulates obesity susceptibility and response to dietary energy"
+  chinese_significance: "Lower MAF (~12-20%) in East Asians vs Europeans (~42%)"
+
+MC4R:
+  full_name: "Melanocortin 4 receptor"
+  chromosome: "18"
+  function: "Satiety signaling, energy balance"
+  nutrition_relevance: "Affects appetite regulation and response to high-energy diets"
+  chinese_significance: "0.14 kg/m² BMI increase per risk allele with high-energy diet in Chinese adults"
+
+APOE:
+  full_name: "Apolipoprotein E"
+  chromosome: "19"
+  function: "Lipid metabolism, cholesterol transport"
+  nutrition_relevance: "Modulates response to dietary fat and cholesterol"
+  chinese_significance: "Population-specific epsilon allele frequencies; affects CVD risk"
+  special_handling: "Two SNPs (rs429358, rs7412) define epsilon alleles (e2/e3/e4)"
+
+FADS1:
+  full_name: "Fatty acid desaturase 1"
+  chromosome: "11"
+  function: "Delta-5 desaturase; omega-3/6 LCPUFA synthesis"
+  nutrition_relevance: "Determines efficiency of converting plant-based ALA to EPA/DHA"
+  chinese_significance: "Strong selection signals in Han Chinese; affects desaturase activity"
+
+FADS2:
+  full_name: "Fatty acid desaturase 2"
+  chromosome: "11"
+  function: "Delta-6 desaturase; omega-3/6 LCPUFA synthesis"
+  nutrition_relevance: "Rate-limiting step in LCPUFA biosynthesis from dietary precursors"
+  chinese_significance: "Under positive selection in Central Plains Han Chinese"
+
+TCF7L2:
+  full_name: "Transcription factor 7-like 2"
+  chromosome: "10"
+  function: "Wnt signaling, insulin secretion"
+  nutrition_relevance: "Strongest genetic risk factor for T2D; interacts with carbohydrate intake"
+  chinese_significance: "Lower risk allele frequency (~3%) in East Asians vs Europeans (~25-30%)"
+
+BCMO1:
+  full_name: "Beta-carotene oxygenase 1"
+  chromosome: "16"
+  function: "Converts beta-carotene to retinal (vitamin A)"
+  nutrition_relevance: "Determines efficiency of plant-based vitamin A production"
+  chinese_significance: "Relevant for populations relying on plant-based vitamin A sources"
+
+ADIPOQ:
+  full_name: "Adiponectin"
+  chromosome: "3"
+  function: "Adipokine signaling, insulin sensitization"
+  nutrition_relevance: "Modulates insulin sensitivity and response to dietary interventions"
+  chinese_significance: "Adipose metabolism regulation in Chinese populations"
+
+FGF21:
+  full_name: "Fibroblast growth factor 21"
+  chromosome: "19"
+  function: "Metabolic hormone, macronutrient preference"
+  nutrition_relevance: "Influences sweet taste preference and macronutrient selection"
+  chinese_significance: "Under selection in Central Plains Han Chinese"
+
+VDR:
+  full_name: "Vitamin D receptor"
+  chromosome: "12"
+  function: "Vitamin D signaling, calcium homeostasis"
+  nutrition_relevance: "Affects vitamin D utilization and calcium metabolism"
+  chinese_significance: "Relevant for bone health in aging Chinese populations"

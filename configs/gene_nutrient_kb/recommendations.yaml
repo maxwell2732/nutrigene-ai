@@ -1,0 +1,295 @@
+# Genotype-specific dietary recommendations
+# Each gene maps to recommendations by risk category (high/moderate/low)
+# Strength of language follows evidence level: A=Recommended, B=Consider, C=May consider
+
+MTHFR:
+  nutrient: folate
+  trait: folate_metabolism
+  high_risk:
+    dri_multiplier: 1.75
+    description: "Homozygous MTHFR variant (TT) significantly reduces folate metabolism. Increased folate intake recommended."
+    food_sources:
+      - "深绿色叶菜 (dark leafy greens: spinach, Chinese broccoli)"
+      - "豆类 (legumes: soybeans, mung beans, lentils)"
+      - "动物肝脏 (liver — limit to 1-2 times/week)"
+      - "柑橘类水果 (citrus fruits)"
+      - "强化谷物 (fortified cereals)"
+    supplementation: "Consider 0.8-1.0 mg/day folic acid supplement (Chinese clinical guideline)"
+    priority: high
+  moderate_risk:
+    dri_multiplier: 1.25
+    description: "Heterozygous MTHFR variant (CT). Moderate increase in folate-rich foods recommended."
+    food_sources:
+      - "深绿色叶菜 (dark leafy greens)"
+      - "豆类 (legumes)"
+      - "柑橘类水果 (citrus fruits)"
+    supplementation: "Standard folic acid supplementation (0.4 mg/day) if planning pregnancy"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "No MTHFR risk variant. Follow standard Chinese dietary guidelines for folate."
+    food_sources:
+      - "均衡饮食 (balanced diet per Chinese Dietary Guidelines 2022)"
+    supplementation: "Not required beyond standard diet"
+    priority: low
+
+FTO:
+  nutrient: energy_balance
+  trait: obesity
+  high_risk:
+    dri_multiplier: 0.90
+    description: "High genetic obesity susceptibility (FTO risk alleles). Energy intake reduction and increased physical activity recommended."
+    food_sources:
+      - "全谷物 (whole grains: brown rice, oats, whole wheat)"
+      - "蔬菜为主 (vegetable-based meals)"
+      - "瘦肉蛋白 (lean protein: fish, chicken breast, tofu)"
+      - "避免含糖饮料 (avoid sugar-sweetened beverages)"
+      - "控制油脂摄入 (limit cooking oil to 25-30g/day)"
+    supplementation: "Not applicable"
+    priority: high
+  moderate_risk:
+    dri_multiplier: 0.95
+    description: "Moderate genetic obesity susceptibility. Maintain balanced energy intake."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+      - "适量运动 (moderate physical activity)"
+    supplementation: "Not applicable"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "Low genetic obesity susceptibility. Follow standard energy guidelines."
+    food_sources:
+      - "均衡饮食 (balanced diet per Chinese Dietary Guidelines 2022)"
+    supplementation: "Not applicable"
+    priority: low
+
+MC4R:
+  nutrient: energy_balance
+  trait: obesity
+  high_risk:
+    dri_multiplier: 0.90
+    description: "MC4R variants affect satiety signaling. Mindful eating and portion control especially important."
+    food_sources:
+      - "高纤维食物 (high-fiber foods: vegetables, whole grains)"
+      - "优质蛋白 (quality protein for satiety: fish, eggs, legumes)"
+      - "少食多餐 (smaller, more frequent meals)"
+    supplementation: "Not applicable"
+    priority: high
+  moderate_risk:
+    dri_multiplier: 0.95
+    description: "Moderate MC4R effect on appetite. Standard dietary guidelines with attention to portion sizes."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not applicable"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "No MC4R risk variant detected."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not applicable"
+    priority: low
+
+APOE:
+  nutrient: dietary_fat
+  trait: lipid_metabolism
+  high_risk:
+    dri_multiplier: 0.85
+    description: "APOE e4 carrier. Reduce saturated fat intake; increase unsaturated fats. Monitor lipid profile regularly."
+    food_sources:
+      - "深海鱼类 (deep-sea fish: salmon, mackerel, sardines)"
+      - "坚果 (nuts: walnuts, almonds)"
+      - "橄榄油/茶油 (olive oil or camellia oil)"
+      - "减少动物脂肪 (reduce animal fat)"
+      - "减少油炸食品 (reduce fried foods)"
+    supplementation: "Consider omega-3 supplementation if fish intake is low"
+    priority: high
+  moderate_risk:
+    dri_multiplier: 0.95
+    description: "APOE e3/e4 or e2/e4. Moderate fat intake adjustment recommended."
+    food_sources:
+      - "均衡脂肪摄入 (balanced fat intake)"
+      - "选择不饱和脂肪 (prefer unsaturated fats)"
+    supplementation: "Not required"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "APOE e3/e3 or e2/e3. Standard dietary fat guidelines."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not required"
+    priority: low
+
+FADS:
+  nutrient: omega3_omega6
+  trait: fatty_acid_metabolism
+  high_risk:
+    dri_multiplier: 1.50
+    description: "Low desaturase activity variants. Increased preformed omega-3 (EPA/DHA) intake recommended over plant-based ALA."
+    food_sources:
+      - "深海鱼类 (fatty fish: salmon, mackerel, sardines, 2-3 times/week)"
+      - "海藻/紫菜 (seaweed/nori — plant DHA source)"
+      - "亚麻籽/核桃 (flaxseed/walnuts for ALA, but conversion limited)"
+    supplementation: "Consider fish oil supplement (EPA+DHA 500-1000 mg/day)"
+    priority: high
+  moderate_risk:
+    dri_multiplier: 1.25
+    description: "Moderate desaturase activity. Include regular fatty fish and plant omega-3 sources."
+    food_sources:
+      - "鱼类 (fish 2 times/week)"
+      - "坚果 (nuts)"
+    supplementation: "Consider if fish intake is insufficient"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "Normal desaturase activity. Standard omega-3 guidelines."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not required"
+    priority: low
+
+TCF7L2:
+  nutrient: carbohydrate
+  trait: type2_diabetes
+  high_risk:
+    dri_multiplier: 0.85
+    description: "TCF7L2 risk variant increases T2D susceptibility. Reduce refined carbohydrate intake; prefer low-glycemic-index foods."
+    food_sources:
+      - "粗粮 (whole grains: brown rice, whole wheat, millet)"
+      - "豆类 (legumes)"
+      - "蔬菜 (non-starchy vegetables)"
+      - "减少白米饭/白面 (reduce white rice and refined flour)"
+      - "减少含糖食品 (reduce sugary foods)"
+    supplementation: "Not applicable; dietary modification primary"
+    priority: critical
+  moderate_risk:
+    dri_multiplier: 0.90
+    description: "Heterozygous TCF7L2. Moderate carbohydrate adjustment recommended."
+    food_sources:
+      - "适量粗粮 (moderate whole grains)"
+      - "控制精制碳水 (limit refined carbohydrates)"
+    supplementation: "Not applicable"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "No TCF7L2 risk variant. Standard carbohydrate guidelines."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not applicable"
+    priority: low
+
+BCMO1:
+  nutrient: vitamin_a
+  trait: vitamin_a_conversion
+  high_risk:
+    dri_multiplier: 1.50
+    description: "Reduced beta-carotene conversion. Increase preformed vitamin A (retinol) or significantly increase beta-carotene intake."
+    food_sources:
+      - "动物肝脏 (liver — richest retinol source, 1-2 times/week)"
+      - "蛋黄 (egg yolks)"
+      - "深色蔬菜水果 (dark-colored vegetables/fruits: carrots, sweet potato, spinach)"
+      - "乳制品 (dairy — if tolerated; note ~90% lactose intolerance in Chinese adults)"
+    supplementation: "Consider retinol supplement if plant-based diet and homozygous risk"
+    priority: medium
+  moderate_risk:
+    dri_multiplier: 1.25
+    description: "Moderately reduced conversion. Ensure adequate beta-carotene intake from diverse sources."
+    food_sources:
+      - "胡萝卜/南瓜 (carrots/pumpkin)"
+      - "深色叶菜 (dark leafy greens)"
+    supplementation: "Not usually required"
+    priority: low
+  low_risk:
+    dri_multiplier: 1.0
+    description: "Normal beta-carotene conversion. Standard vitamin A guidelines."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not required"
+    priority: low
+
+ADIPOQ:
+  nutrient: insulin_sensitivity
+  trait: metabolic_health
+  high_risk:
+    dri_multiplier: 1.0
+    description: "Low adiponectin variant. Focus on anti-inflammatory diet and regular physical activity to improve insulin sensitivity."
+    food_sources:
+      - "鱼类 (fish — anti-inflammatory omega-3)"
+      - "蔬菜水果 (fruits and vegetables — antioxidants)"
+      - "全谷物 (whole grains)"
+      - "减少加工食品 (reduce processed foods)"
+      - "绿茶 (green tea — polyphenols)"
+    supplementation: "Consider omega-3 if dietary intake insufficient"
+    priority: medium
+  moderate_risk:
+    dri_multiplier: 1.0
+    description: "Moderate adiponectin level. Standard anti-inflammatory dietary pattern recommended."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not required"
+    priority: low
+  low_risk:
+    dri_multiplier: 1.0
+    description: "Normal adiponectin levels expected."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not required"
+    priority: low
+
+FGF21:
+  nutrient: macronutrient_preference
+  trait: sweet_preference
+  high_risk:
+    dri_multiplier: 0.90
+    description: "FGF21 variant associated with higher sugar/carbohydrate preference. Be mindful of sugar intake."
+    food_sources:
+      - "水果代替甜食 (fruit instead of sweets)"
+      - "减少含糖饮料 (reduce sugar-sweetened beverages)"
+      - "选择低糖零食 (choose low-sugar snacks)"
+    supplementation: "Not applicable"
+    priority: medium
+  moderate_risk:
+    dri_multiplier: 0.95
+    description: "Moderate sweet preference tendency. Standard guidelines with sugar awareness."
+    food_sources:
+      - "适度糖分摄入 (moderate sugar intake)"
+    supplementation: "Not applicable"
+    priority: low
+  low_risk:
+    dri_multiplier: 1.0
+    description: "Normal macronutrient preference pattern."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not applicable"
+    priority: low
+
+VDR:
+  nutrient: vitamin_d_calcium
+  trait: bone_health
+  high_risk:
+    dri_multiplier: 1.50
+    description: "VDR variant reduces vitamin D utilization. Increased vitamin D and calcium intake recommended."
+    food_sources:
+      - "鱼类 (fatty fish)"
+      - "蛋黄 (egg yolks)"
+      - "强化食品 (fortified foods)"
+      - "豆腐/豆制品 (tofu/soy products — calcium source)"
+      - "深绿色蔬菜 (dark green vegetables — calcium)"
+      - "适当晒太阳 (moderate sun exposure)"
+    supplementation: "Consider vitamin D3 supplement (10-20 μg/day); calcium if dietary intake < 800 mg/day"
+    priority: high
+  moderate_risk:
+    dri_multiplier: 1.25
+    description: "Moderate VDR effect. Ensure adequate vitamin D and calcium from diet and sunlight."
+    food_sources:
+      - "鱼类和蛋 (fish and eggs)"
+      - "豆制品 (soy products)"
+    supplementation: "Consider in winter months or if limited sun exposure"
+    priority: medium
+  low_risk:
+    dri_multiplier: 1.0
+    description: "Normal vitamin D utilization. Standard guidelines."
+    food_sources:
+      - "均衡饮食 (balanced diet)"
+    supplementation: "Not required"
+    priority: low

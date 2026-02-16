@@ -1,0 +1,253 @@
+# Test genotype profiles for genetic risk module
+# Three profiles: high risk, moderate risk, low risk
+
+# Individual 1: High risk across multiple genes
+# MTHFR TT, FTO AA, MC4R CC, APOE e4/e4, FADS low activity, TCF7L2 TT
+individual_high_risk:
+  individual_id: "TEST_HIGH_001"
+  population: "han_chinese"
+  data_source: "test_fixture"
+  genotypes:
+    # MTHFR C677T - TT homozygous risk
+    - rsid: "rs1801133"
+      chromosome: "1"
+      position: 11856378
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "TT"
+      zygosity: "homozygous_alternate"
+      quality_score: 99.0
+    # MTHFR A1298C - CC homozygous risk
+    - rsid: "rs1801131"
+      chromosome: "1"
+      position: 11854476
+      reference_allele: "A"
+      alternate_allele: "C"
+      genotype: "CC"
+      zygosity: "homozygous_alternate"
+      quality_score: 98.0
+    # FTO - AA homozygous risk
+    - rsid: "rs9939609"
+      chromosome: "16"
+      position: 53820527
+      reference_allele: "T"
+      alternate_allele: "A"
+      genotype: "AA"
+      zygosity: "homozygous_alternate"
+      quality_score: 95.0
+    # MC4R - CC homozygous risk
+    - rsid: "rs17782313"
+      chromosome: "18"
+      position: 60183864
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "CC"
+      zygosity: "homozygous_alternate"
+      quality_score: 97.0
+    # MC4R second variant - AA risk
+    - rsid: "rs12970134"
+      chromosome: "18"
+      position: 60352328
+      reference_allele: "G"
+      alternate_allele: "A"
+      genotype: "AA"
+      zygosity: "homozygous_alternate"
+      quality_score: 96.0
+    # APOE rs429358 - CC (e4 defining)
+    - rsid: "rs429358"
+      chromosome: "19"
+      position: 44908684
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "CC"
+      zygosity: "homozygous_alternate"
+      quality_score: 99.0
+    # APOE rs7412 - CC (e4/e4 with rs429358 CC)
+    - rsid: "rs7412"
+      chromosome: "19"
+      position: 44908822
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "CC"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    # FADS1 - CC low activity
+    - rsid: "rs174547"
+      chromosome: "11"
+      position: 61571478
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "CC"
+      zygosity: "homozygous_alternate"
+      quality_score: 94.0
+    # FADS2 - CC
+    - rsid: "rs498793"
+      chromosome: "11"
+      position: 61609750
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "CC"
+      zygosity: "homozygous_alternate"
+      quality_score: 93.0
+    # TCF7L2 - TT risk
+    - rsid: "rs7903146"
+      chromosome: "10"
+      position: 112998590
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "TT"
+      zygosity: "homozygous_alternate"
+      quality_score: 98.0
+    # BCMO1 - TT low conversion
+    - rsid: "rs12934922"
+      chromosome: "16"
+      position: 81264597
+      reference_allele: "A"
+      alternate_allele: "T"
+      genotype: "TT"
+      zygosity: "homozygous_alternate"
+      quality_score: 92.0
+    # ADIPOQ - TT risk
+    - rsid: "rs1501299"
+      chromosome: "3"
+      position: 186571817
+      reference_allele: "G"
+      alternate_allele: "T"
+      genotype: "TT"
+      zygosity: "homozygous_alternate"
+      quality_score: 91.0
+    # FGF21 - AA sugar preference
+    - rsid: "rs838133"
+      chromosome: "19"
+      position: 48845877
+      reference_allele: "G"
+      alternate_allele: "A"
+      genotype: "AA"
+      zygosity: "homozygous_alternate"
+      quality_score: 90.0
+    # VDR - TT low activity
+    - rsid: "rs2228570"
+      chromosome: "12"
+      position: 47879112
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "TT"
+      zygosity: "homozygous_alternate"
+      quality_score: 95.0
+
+# Individual 2: Moderate risk (heterozygous across most genes)
+individual_moderate_risk:
+  individual_id: "TEST_MOD_002"
+  population: "han_chinese"
+  data_source: "test_fixture"
+  genotypes:
+    - rsid: "rs1801133"
+      chromosome: "1"
+      position: 11856378
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "CT"
+      zygosity: "heterozygous"
+      quality_score: 98.0
+    - rsid: "rs9939609"
+      chromosome: "16"
+      position: 53820527
+      reference_allele: "T"
+      alternate_allele: "A"
+      genotype: "TA"
+      zygosity: "heterozygous"
+      quality_score: 97.0
+    - rsid: "rs429358"
+      chromosome: "19"
+      position: 44908684
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "TC"
+      zygosity: "heterozygous"
+      quality_score: 99.0
+    - rsid: "rs7412"
+      chromosome: "19"
+      position: 44908822
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "CC"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    - rsid: "rs174547"
+      chromosome: "11"
+      position: 61571478
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "TC"
+      zygosity: "heterozygous"
+      quality_score: 96.0
+
+# Individual 3: Low risk (homozygous reference / protective alleles)
+individual_low_risk:
+  individual_id: "TEST_LOW_003"
+  population: "han_chinese"
+  data_source: "test_fixture"
+  genotypes:
+    - rsid: "rs1801133"
+      chromosome: "1"
+      position: 11856378
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "CC"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    - rsid: "rs9939609"
+      chromosome: "16"
+      position: 53820527
+      reference_allele: "T"
+      alternate_allele: "A"
+      genotype: "TT"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    - rsid: "rs429358"
+      chromosome: "19"
+      position: 44908684
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "TT"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    - rsid: "rs7412"
+      chromosome: "19"
+      position: 44908822
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "CC"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    - rsid: "rs174547"
+      chromosome: "11"
+      position: 61571478
+      reference_allele: "T"
+      alternate_allele: "C"
+      genotype: "TT"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+    - rsid: "rs7903146"
+      chromosome: "10"
+      position: 112998590
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "CC"
+      zygosity: "homozygous_reference"
+      quality_score: 99.0
+
+# Individual 4: Partial profile (only MTHFR, for missing-data testing)
+individual_partial:
+  individual_id: "TEST_PARTIAL_004"
+  population: "han_chinese"
+  data_source: "test_fixture"
+  genotypes:
+    - rsid: "rs1801133"
+      chromosome: "1"
+      position: 11856378
+      reference_allele: "C"
+      alternate_allele: "T"
+      genotype: "TT"
+      zygosity: "homozygous_alternate"
+      quality_score: 15.0

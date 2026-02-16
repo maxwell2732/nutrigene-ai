@@ -1,0 +1,194 @@
+# SNP variant definitions for NutriGene AI
+# Each entry: gene, rsID, risk/protective alleles, evidence level, references
+
+# --- MTHFR ---
+MTHFR_C677T:
+  gene: MTHFR
+  rsid: rs1801133
+  common_name: "C677T"
+  chromosome: "1"
+  position: 11856378
+  nutrient: folate
+  risk_allele: T
+  protective_allele: C
+  evidence_level: A
+  pubmed_ids: ["27882862", "27108693", "23472119"]
+  notes: "Reduces enzyme activity to ~30% (TT) or ~65% (CT); increases homocysteine"
+
+MTHFR_A1298C:
+  gene: MTHFR
+  rsid: rs1801131
+  common_name: "A1298C"
+  chromosome: "1"
+  position: 11854476
+  nutrient: folate
+  risk_allele: C
+  protective_allele: A
+  evidence_level: B
+  pubmed_ids: ["27882862"]
+  notes: "Milder effect on enzyme activity than C677T"
+
+# --- FTO ---
+FTO_rs9939609:
+  gene: FTO
+  rsid: rs9939609
+  common_name: "FTO intron 1"
+  chromosome: "16"
+  position: 53820527
+  nutrient: energy_balance
+  risk_allele: A
+  protective_allele: T
+  evidence_level: A
+  pubmed_ids: ["19057800", "25673413", "41340654"]
+  notes: "Most replicated obesity variant; modulates hunger and appetite pathways"
+
+# --- MC4R ---
+MC4R_rs17782313:
+  gene: MC4R
+  rsid: rs17782313
+  common_name: "MC4R near gene"
+  chromosome: "18"
+  position: 60183864
+  nutrient: energy_balance
+  risk_allele: C
+  protective_allele: T
+  evidence_level: A
+  pubmed_ids: ["41340654"]
+  notes: "Associated with increased BMI and appetite"
+
+MC4R_rs12970134:
+  gene: MC4R
+  rsid: rs12970134
+  common_name: "MC4R near gene"
+  chromosome: "18"
+  position: 60352328
+  nutrient: energy_balance
+  risk_allele: A
+  protective_allele: G
+  evidence_level: B
+  pubmed_ids: ["41340654"]
+  notes: "0.140 kg/m² BMI increase per risk allele with high-energy diet"
+
+# --- APOE ---
+APOE_rs429358:
+  gene: APOE
+  rsid: rs429358
+  common_name: "APOE epsilon determinant 1"
+  chromosome: "19"
+  position: 44908684
+  nutrient: dietary_fat
+  risk_allele: C
+  protective_allele: T
+  evidence_level: A
+  pubmed_ids: ["30002370"]
+  notes: "Defines e4 allele (with rs7412 T); C allele = e4 risk"
+
+APOE_rs7412:
+  gene: APOE
+  rsid: rs7412
+  common_name: "APOE epsilon determinant 2"
+  chromosome: "19"
+  position: 44908822
+  nutrient: dietary_fat
+  risk_allele: T
+  protective_allele: C
+  evidence_level: A
+  pubmed_ids: ["30002370"]
+  notes: "T allele = e2; combined with rs429358 defines epsilon genotype"
+
+# --- FADS1/2 ---
+FADS1_rs174547:
+  gene: FADS1
+  rsid: rs174547
+  common_name: "FADS1 promoter"
+  chromosome: "11"
+  position: 61571478
+  nutrient: omega3_omega6
+  risk_allele: C
+  protective_allele: T
+  evidence_level: A
+  pubmed_ids: ["21414826"]
+  notes: "C allele = lower desaturase activity in Asians (p=5.0e-5)"
+
+FADS2_rs498793:
+  gene: FADS2
+  rsid: rs498793
+  common_name: "FADS2 intron"
+  chromosome: "11"
+  position: 61609750
+  nutrient: omega3_omega6
+  risk_allele: C
+  protective_allele: T
+  evidence_level: B
+  pubmed_ids: ["21414826"]
+  notes: "Associated with EPA:ALA ratio in Asian populations"
+
+# --- TCF7L2 ---
+TCF7L2_rs7903146:
+  gene: TCF7L2
+  rsid: rs7903146
+  common_name: "TCF7L2 intron 3"
+  chromosome: "10"
+  position: 112998590
+  nutrient: carbohydrate
+  risk_allele: T
+  protective_allele: C
+  evidence_level: A
+  pubmed_ids: ["16415884", "17463246"]
+  notes: "Strongest common T2D variant; lower frequency in East Asians"
+
+# --- BCMO1 ---
+BCMO1_rs12934922:
+  gene: BCMO1
+  rsid: rs12934922
+  common_name: "BCMO1 coding"
+  chromosome: "16"
+  position: 81264597
+  nutrient: vitamin_a
+  risk_allele: T
+  protective_allele: A
+  evidence_level: B
+  pubmed_ids: ["19103647", "22113863"]
+  notes: "Reduces beta-carotene conversion efficiency by ~32% per T allele"
+
+# --- ADIPOQ ---
+ADIPOQ_rs1501299:
+  gene: ADIPOQ
+  rsid: rs1501299
+  common_name: "ADIPOQ +276G>T"
+  chromosome: "3"
+  position: 186571817
+  nutrient: insulin_sensitivity
+  risk_allele: T
+  protective_allele: G
+  evidence_level: B
+  pubmed_ids: ["15616215"]
+  notes: "T allele associated with lower adiponectin and insulin resistance"
+
+# --- FGF21 ---
+FGF21_rs838133:
+  gene: FGF21
+  rsid: rs838133
+  common_name: "FGF21 upstream"
+  chromosome: "19"
+  position: 48845877
+  nutrient: macronutrient_preference
+  risk_allele: A
+  protective_allele: G
+  evidence_level: C
+  pubmed_ids: ["28146069"]
+  notes: "A allele associated with higher carbohydrate/sugar preference"
+
+# --- VDR ---
+VDR_rs2228570:
+  gene: VDR
+  rsid: rs2228570
+  common_name: "VDR FokI (Cdx2)"
+  chromosome: "12"
+  position: 47879112
+  nutrient: vitamin_d_calcium
+  risk_allele: T
+  protective_allele: C
+  evidence_level: B
+  pubmed_ids: ["24348887"]
+  notes: "T allele (f) = less active VDR protein; affects calcium absorption"

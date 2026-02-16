@@ -1,0 +1,158 @@
+# Chinese Dietary Reference Intakes (中国居民膳食营养素参考摄入量 2022)
+# Recommended Nutrient Intakes (RNI) for adults
+# Age groups: 18-49, 50-64, 65+
+# Special groups: pregnant (by trimester), lactating
+
+energy:
+  unit: "kcal/day"
+  description: "Estimated Energy Requirements (light physical activity)"
+  adult_male_18_49: 2250
+  adult_male_50_64: 2100
+  adult_male_65_plus: 1900
+  adult_female_18_49: 1800
+  adult_female_50_64: 1700
+  adult_female_65_plus: 1550
+  pregnant_t1: 1800
+  pregnant_t2: 2100
+  pregnant_t3: 2250
+  lactating: 2300
+
+folate:
+  unit: "μg DFE/day"
+  description: "Dietary Folate Equivalents"
+  adult_male_18_49: 400
+  adult_male_50_64: 400
+  adult_male_65_plus: 400
+  adult_female_18_49: 400
+  adult_female_50_64: 400
+  adult_female_65_plus: 400
+  pregnant_t1: 600
+  pregnant_t2: 600
+  pregnant_t3: 600
+  lactating: 550
+
+vitamin_a:
+  unit: "μg RAE/day"
+  description: "Retinol Activity Equivalents"
+  adult_male_18_49: 800
+  adult_male_50_64: 800
+  adult_male_65_plus: 800
+  adult_female_18_49: 700
+  adult_female_50_64: 700
+  adult_female_65_plus: 700
+  pregnant_t1: 700
+  pregnant_t2: 770
+  pregnant_t3: 770
+  lactating: 1300
+
+vitamin_d:
+  unit: "μg/day"
+  description: "Cholecalciferol"
+  adult_male_18_49: 10
+  adult_male_50_64: 10
+  adult_male_65_plus: 15
+  adult_female_18_49: 10
+  adult_female_50_64: 10
+  adult_female_65_plus: 15
+  pregnant_t1: 10
+  pregnant_t2: 10
+  pregnant_t3: 10
+  lactating: 10
+
+calcium:
+  unit: "mg/day"
+  description: "Calcium"
+  adult_male_18_49: 800
+  adult_male_50_64: 1000
+  adult_male_65_plus: 1000
+  adult_female_18_49: 800
+  adult_female_50_64: 1000
+  adult_female_65_plus: 1000
+  pregnant_t1: 800
+  pregnant_t2: 1000
+  pregnant_t3: 1000
+  lactating: 1000
+
+iron:
+  unit: "mg/day"
+  description: "Iron"
+  adult_male_18_49: 12
+  adult_male_50_64: 12
+  adult_male_65_plus: 12
+  adult_female_18_49: 20
+  adult_female_50_64: 12
+  adult_female_65_plus: 12
+  pregnant_t1: 20
+  pregnant_t2: 24
+  pregnant_t3: 29
+  lactating: 24
+
+zinc:
+  unit: "mg/day"
+  description: "Zinc"
+  adult_male_18_49: 12.5
+  adult_male_50_64: 12.5
+  adult_male_65_plus: 12.5
+  adult_female_18_49: 7.5
+  adult_female_50_64: 7.5
+  adult_female_65_plus: 7.5
+  pregnant_t1: 9.5
+  pregnant_t2: 16.5
+  pregnant_t3: 16.5
+  lactating: 21.5
+
+omega3_epa_dha:
+  unit: "mg/day"
+  description: "EPA + DHA combined (Adequate Intake)"
+  adult_male_18_49: 250
+  adult_male_50_64: 250
+  adult_male_65_plus: 250
+  adult_female_18_49: 250
+  adult_female_50_64: 250
+  adult_female_65_plus: 250
+  pregnant_t1: 250
+  pregnant_t2: 300
+  pregnant_t3: 300
+  lactating: 300
+
+dietary_fat:
+  unit: "% of energy"
+  description: "Total fat as percentage of energy intake"
+  adult_male_18_49: 25
+  adult_male_50_64: 25
+  adult_male_65_plus: 25
+  adult_female_18_49: 25
+  adult_female_50_64: 25
+  adult_female_65_plus: 25
+  pregnant_t1: 25
+  pregnant_t2: 30
+  pregnant_t3: 30
+  lactating: 30
+
+carbohydrate:
+  unit: "% of energy"
+  description: "Carbohydrate as percentage of energy intake"
+  adult_male_18_49: 55
+  adult_male_50_64: 55
+  adult_male_65_plus: 55
+  adult_female_18_49: 55
+  adult_female_50_64: 55
+  adult_female_65_plus: 55
+  pregnant_t1: 55
+  pregnant_t2: 55
+  pregnant_t3: 55
+  lactating: 55
+
+protein:
+  unit: "g/day"
+  description: "Protein"
+  adult_male_18_49: 65
+  adult_male_50_64: 65
+  adult_male_65_plus: 65
+  adult_female_18_49: 55
+  adult_female_50_64: 55
+  adult_female_65_plus: 55
+  pregnant_t1: 55
+  pregnant_t2: 70
+  pregnant_t3: 85
+  lactating: 80

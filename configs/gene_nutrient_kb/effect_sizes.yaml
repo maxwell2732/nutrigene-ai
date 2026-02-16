@@ -1,0 +1,115 @@
+# Effect sizes with 95% confidence intervals
+# All effect sizes are PER RISK ALLELE (additive model)
+# Population: East Asian unless otherwise specified
+
+MTHFR_C677T:
+  value: 2.5
+  ci_lower: 1.8
+  ci_upper: 3.2
+  unit: "μmol/L homocysteine increase"
+  population: "han_chinese"
+  reference: "He et al. 2016 PMID:27108693"
+
+MTHFR_A1298C:
+  value: 0.8
+  ci_lower: 0.3
+  ci_upper: 1.3
+  unit: "μmol/L homocysteine increase"
+  population: "han_chinese"
+  reference: "He et al. 2016 PMID:27108693"
+
+FTO_rs9939609:
+  value: 0.39
+  ci_lower: 0.31
+  ci_upper: 0.47
+  unit: "kg/m² BMI increase"
+  population: "east_asian"
+  reference: "Meta-analysis East Asian populations"
+
+MC4R_rs17782313:
+  value: 0.26
+  ci_lower: 0.18
+  ci_upper: 0.34
+  unit: "kg/m² BMI increase"
+  population: "east_asian"
+  reference: "gnomAD / meta-analyses"
+
+MC4R_rs12970134:
+  value: 0.14
+  ci_lower: 0.08
+  ci_upper: 0.20
+  unit: "kg/m² BMI increase with high-energy diet"
+  population: "chinese_adults"
+  reference: "Yang et al. 2025 PMID:41340654"
+
+APOE_rs429358:
+  value: 0.20
+  ci_lower: 0.12
+  ci_upper: 0.28
+  unit: "mmol/L LDL-C increase (e4 carriers)"
+  population: "east_asian"
+  reference: "Meta-analysis"
+
+APOE_rs7412:
+  value: -0.15
+  ci_lower: -0.22
+  ci_upper: -0.08
+  unit: "mmol/L LDL-C decrease (e2 carriers)"
+  population: "east_asian"
+  reference: "Meta-analysis"
+
+FADS1_rs174547:
+  value: -0.08
+  ci_lower: -0.11
+  ci_upper: -0.05
+  unit: "AA:LA ratio decrease"
+  population: "east_asian"
+  reference: "Tanaka et al. 2011 PMID:21414826"
+
+FADS2_rs498793:
+  value: -0.05
+  ci_lower: -0.08
+  ci_upper: -0.02
+  unit: "EPA:ALA ratio decrease"
+  population: "east_asian"
+  reference: "Tanaka et al. 2011 PMID:21414826"
+
+TCF7L2_rs7903146:
+  value: 1.40
+  ci_lower: 1.28
+  ci_upper: 1.55
+  unit: "odds ratio for T2D"
+  population: "east_asian"
+  reference: "Meta-analysis; Grant et al. 2006 PMID:16415884"
+
+BCMO1_rs12934922:
+  value: -0.32
+  ci_lower: -0.40
+  ci_upper: -0.24
+  unit: "fraction reduction in beta-carotene conversion"
+  population: "mixed"
+  reference: "Leung et al. 2009 PMID:19103647"
+
+ADIPOQ_rs1501299:
+  value: -1.2
+  ci_lower: -1.8
+  ci_upper: -0.6
+  unit: "μg/mL adiponectin decrease"
+  population: "east_asian"
+  reference: "Meta-analysis"
+
+FGF21_rs838133:
+  value: 0.15
+  ci_lower: 0.10
+  ci_upper: 0.20
+  unit: "SD increase in carbohydrate preference"
+  population: "mixed"
+  reference: "Chu et al. 2017 PMID:28146069"
+
+VDR_rs2228570:
+  value: -0.08
+  ci_lower: -0.12
+  ci_upper: -0.04
+  unit: "SD decrease in serum 25(OH)D"
+  population: "east_asian"
+  reference: "Meta-analysis"
