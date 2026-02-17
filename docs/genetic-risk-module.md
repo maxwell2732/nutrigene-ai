@@ -117,23 +117,28 @@ For lower-level access, import the classes directly: `GeneNutrientKnowledgeBase`
 
 ## Quick Smoke Test
 
-Paste this into a Python shell to generate an end-to-end report:
+Activate the `gnn` environment first, then run from the project root:
 
-```python
-from src.models.genetic_risk import create_engine, generate_report
+```bash
+conda activate gnn
+cd C:\Users\zhuch\my-project
+python -c "
+from src.models.genetic_risk import generate_report
 from src.models.genetic_risk.data_models import GeneticProfile, SNPGenotype
 
-# High-risk MTHFR + FTO profile for a 35-year-old woman
 profile = GeneticProfile(genotypes=[
-    SNPGenotype(rsid="rs1801133", genotype="TT", chromosome="1",  position=11856378),
-    SNPGenotype(rsid="rs9939609", genotype="AA", chromosome="16", position=53820527),
+    SNPGenotype(rsid='rs1801133', genotype='TT', chromosome='1',  position=11856378),
+    SNPGenotype(rsid='rs9939609', genotype='AA', chromosome='16', position=53820527),
 ])
 
-report = generate_report(profile, age=35, sex="female")
+report = generate_report(profile, age=35, sex='female')
 print(report.summary())
+"
 ```
 
 This creates a worst-case MTHFR (TT homozygous risk) + FTO (AA homozygous risk) profile and prints a personalized nutrition recommendation summary with Chinese DRI targets and food sources.
+
+> **Windows encoding note:** Use `conda activate gnn` + `python` directly. Do **not** use `conda run -n gnn python` — it pipes stdout through a non-UTF-8 encoding, garbling Chinese characters. Alternatively, set `PYTHONUTF8=1` before running.
 
 ---
 

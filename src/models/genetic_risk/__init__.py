@@ -10,8 +10,17 @@ Public API:
     GeneticRiskReport — Complete risk assessment report.
 """
 
+import sys
 from pathlib import Path
 from typing import List, Optional
+
+# Enable UTF-8 stdout on Windows so Chinese characters display correctly.
+# This must run before any print() calls; does not affect conda run pipes.
+if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from .data_models import (
     DietaryRecommendation,
