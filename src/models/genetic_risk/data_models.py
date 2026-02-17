@@ -28,12 +28,12 @@ class SNPGenotype(BaseModel):
     rsid: str = Field(..., pattern=r"^rs\d+$", description="rsID (e.g., rs1801133)")
     chromosome: str = Field(..., description="Chromosome (1-22, X, Y, MT)")
     position: int = Field(..., gt=0, description="Genomic position (GRCh38)")
-    reference_allele: str = Field(..., pattern=r"^[ACGT]+$")
-    alternate_allele: str = Field(..., pattern=r"^[ACGT]+$")
+    reference_allele: str = Field("N", pattern=r"^[ACGTN]+$")
+    alternate_allele: str = Field("N", pattern=r"^[ACGTN]+$")
     genotype: str = Field(
         ..., pattern=r"^[ACGT]{2}$", description="Observed genotype (e.g., 'CT')"
     )
-    zygosity: Zygosity
+    zygosity: Zygosity = Zygosity.UNKNOWN
     quality_score: Optional[float] = Field(None, ge=0, le=100)
 
     @field_validator("genotype")
@@ -48,10 +48,10 @@ class SNPGenotype(BaseModel):
 class GeneticProfile(BaseModel):
     """Complete genetic profile for an individual."""
 
-    individual_id: str = Field(..., description="Anonymized individual identifier")
+    individual_id: str = Field("anonymous", description="Anonymized individual identifier")
     genotypes: List[SNPGenotype] = Field(..., min_length=1)
     population: Literal["han_chinese", "east_asian", "other"] = "han_chinese"
-    data_source: str = Field(..., description="e.g., 'WGS', 'SNP_Array', 'DTC'")
+    data_source: str = Field("unknown", description="e.g., 'WGS', 'SNP_Array', 'DTC'")
     collection_date: Optional[str] = Field(None, description="ISO 8601 date")
 
     def get_genotype_by_rsid(self, rsid: str) -> Optional[SNPGenotype]:
@@ -177,3 +177,43 @@ class GeneticRiskReport(BaseModel):
             ],
             "missing_variants": self.missing_variants,
         }
+
+    def summary(self) -> str:
+        """Return a human-readable summary string."""
+        lines = [
+            f"=== Genetic Risk Report: {self.individual_id} ===",
+            f"Date: {self.generated_date}",
+            f"Population: {self.population}",
+            "",
+        ]
+
+        if self.risk_scores:
+            lines.append(f"--- Risk Scores ({len(self.risk_scores)}) ---")
+            for rs in self.risk_scores:
+                lines.append(
+                    f"  {rs.trait}: z={rs.score:+.2f} "
+                    f"(P{rs.percentile:.0f}, {rs.risk_category}) "
+                    f"[{', '.join(rs.contributing_variants)}]"
+                )
+            lines.append("")
+
+        if self.recommendations:
+            lines.append(f"--- Recommendations ({len(self.recommendations)}) ---")
+            for rec in self.recommendations:
+                lines.append(
+                    f"  [{rec.priority.upper()}] {rec.nutrient}: "
+                    f"{rec.recommended_intake} {rec.unit} "
+                    f"(DRI baseline: {rec.current_dri} {rec.unit})"
+                )
+                if rec.food_sources:
+                    lines.append(f"    Foods: {', '.join(rec.food_sources[:5])}")
+            lines.append("")
+
+        if self.missing_variants:
+            lines.append(
+                f"Missing variants: {', '.join(self.missing_variants)}"
+            )
+            lines.append("")
+
+        lines.append(f"Disclaimer: {self.disclaimer}")
+        return "\n".join(lines)
