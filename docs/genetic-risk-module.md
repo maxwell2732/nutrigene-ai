@@ -93,6 +93,28 @@ python -m ruff check src/ tests/
 
 ---
 
+## Public API
+
+The module exposes two convenience functions for quick usage:
+
+```python
+from src.models.genetic_risk import create_engine, generate_report
+
+# Option 1: One-call shortcut (creates engine internally each time)
+report = generate_report(profile, age=35, sex="female")
+
+# Option 2: Reusable engine (better for batch processing)
+engine = create_engine()
+report1 = engine.generate_report(profile1, age=35, sex="female")
+report2 = engine.generate_report(profile2, age=50, sex="male")
+```
+
+Both functions auto-discover config paths (`configs/gene_nutrient_kb/` and `configs/chinese_dri.yaml`). Override with `kb_dir=` and `dri_path=` if needed.
+
+For lower-level access, import the classes directly: `GeneNutrientKnowledgeBase`, `RiskScoringEngine`, `RecommendationEngine`.
+
+---
+
 ## Quick Smoke Test
 
 Paste this into a Python shell to generate an end-to-end report:
@@ -115,25 +137,22 @@ This creates a worst-case MTHFR (TT homozygous risk) + FTO (AA homozygous risk) 
 
 ---
 
-## What Was Fixed (2026-02-17)
+## What Was Fixed
+
+### 2026-02-17 (round 2): Smoke test didn't work
+
+The Quick Smoke Test above was documented but never actually run. Three issues:
+
+1. **`create_engine()` / `generate_report()` didn't exist** — documented in `__init__.py` docstring but never implemented. Added as convenience functions that auto-discover config paths.
+2. **`GeneticRiskReport.summary()` didn't exist** — added a human-readable summary method that prints risk scores, recommendations with food sources, and missing variants.
+3. **`SNPGenotype` / `GeneticProfile` required too many fields** — `reference_allele`, `alternate_allele`, `zygosity`, `individual_id`, and `data_source` were all required with no defaults, making the minimal smoke test constructor fail. Made these optional with sensible defaults (`"N"`, `Zygosity.UNKNOWN`, `"anonymous"`, `"unknown"`).
+
+### 2026-02-17 (round 1): Test and lint fixes
 
 The module was built on 2026-02-16 but not verified. The following issues were found and resolved:
 
-### 1. Missing SNP variant
-The knowledge base had 14 variants; the test `test_get_all_tracked_rsids` asserted `>= 15`. Added **VDR BsmI (`rs1544410`)** — a well-validated vitamin D receptor variant studied in Chinese populations for bone mineral density and calcium absorption. Added to:
-- `configs/gene_nutrient_kb/variants.yaml`
-- `configs/gene_nutrient_kb/effect_sizes.yaml`
-- `configs/gene_nutrient_kb/allele_frequencies.yaml`
-
-### 2. Unused imports (lint)
-Ruff flagged 5 unused imports; auto-fixed with `ruff --fix`:
-
-| File | Removed import |
-|------|---------------|
-| `src/models/genetic_risk/recommendation.py` | `typing.Dict` |
-| `tests/conftest.py` | `Zygosity` |
-| `tests/models/genetic_risk/test_data_models.py` | `GeneNutrientPair` |
-| `tests/models/genetic_risk/test_risk_scoring.py` | `RiskScore`, `TRAIT_VARIANT_MAP` |
+1. **Missing SNP variant** — knowledge base had 14 variants; test asserted `>= 15`. Added **VDR BsmI (`rs1544410`)**.
+2. **Unused imports** — Ruff flagged 5 unused imports; auto-fixed with `ruff --fix`.
 
 ---
 
