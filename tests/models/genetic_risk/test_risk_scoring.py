@@ -2,10 +2,9 @@
 
 import pytest
 
-from src.models.genetic_risk.data_models import GeneticProfile, RiskScore
+from src.models.genetic_risk.data_models import GeneticProfile
 from src.models.genetic_risk.risk_scoring import (
     RiskScoringEngine,
-    TRAIT_VARIANT_MAP,
     _categorize_risk,
     _z_to_percentile,
 )

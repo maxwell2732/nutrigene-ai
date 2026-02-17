@@ -113,3 +113,11 @@ VDR_rs2228570:
   unit: "SD decrease in serum 25(OH)D"
   population: "east_asian"
   reference: "Meta-analysis"
+
+VDR_rs1544410:
+  value: -0.05
+  ci_lower: -0.09
+  ci_upper: -0.01
+  unit: "SD decrease in bone mineral density"
+  population: "east_asian"
+  reference: "Zhang et al. 2013 PMID:23616267"

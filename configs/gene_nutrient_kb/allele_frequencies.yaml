@@ -99,3 +99,10 @@ VDR_rs2228570:
   han_chinese_south: 0.36
   global: 0.38
   source: "gnomAD v4"
+
+VDR_rs1544410:
+  east_asian: 0.42
+  han_chinese_north: 0.44
+  han_chinese_south: 0.40
+  global: 0.39
+  source: "gnomAD v4; Zhao et al. 2017 PMID:27933582"

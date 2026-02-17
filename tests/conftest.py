@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from src.models.genetic_risk.data_models import GeneticProfile, SNPGenotype, Zygosity
+from src.models.genetic_risk.data_models import GeneticProfile, SNPGenotype
 from src.models.genetic_risk.knowledge_base import GeneNutrientKnowledgeBase
 from src.models.genetic_risk.risk_scoring import RiskScoringEngine
 from src.utils.config_loader import load_yaml_config

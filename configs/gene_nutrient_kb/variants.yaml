@@ -192,3 +192,16 @@ VDR_rs2228570:
   evidence_level: B
   pubmed_ids: ["24348887"]
   notes: "T allele (f) = less active VDR protein; affects calcium absorption"
+
+VDR_rs1544410:
+  gene: VDR
+  rsid: rs1544410
+  common_name: "VDR BsmI"
+  chromosome: "12"
+  position: 47844974
+  nutrient: vitamin_d_calcium
+  risk_allele: A
+  protective_allele: G
+  evidence_level: B
+  pubmed_ids: ["23616267", "27933582"]
+  notes: "A allele (b) linked to lower bone mineral density; interacts with rs2228570 in haplotypes"

@@ -6,7 +6,6 @@ from pydantic import ValidationError
 from src.models.genetic_risk.data_models import (
     DietaryRecommendation,
     EffectSize,
-    GeneNutrientPair,
     GeneticProfile,
     GeneticRiskReport,
     RiskScore,

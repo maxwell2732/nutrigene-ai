@@ -8,7 +8,7 @@ risk profiles.
 import logging
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 from src.utils.config_loader import load_yaml_config
 from src.utils.exceptions import RecommendationError
